@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="将 Hexo 博客部署到 GitHub Pages ( .github.io 项目) 也是一个非常常见的方案。正如我们之前讨论的，GitHub Pages 非常适合托管来自 GitHub 仓库的静态网站，并且对于公共仓库是 无费用 的。 Hexo 内置了方便的部署功能，可以很轻松地将生成的静态文件推送到 GitHub Pages 仓库。 以下是将您的 Hexo 博客部署到 GitHub Pages">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/06/03/github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="将 Hexo 博客部署到 GitHub Pages ( .github.io 项目) 也是一个非常常见的方案。正如我们之前讨论的，GitHub Pages 非常适合托管来自 GitHub 仓库的静态网站，并且对于公共仓库是 无费用 的。 Hexo 内置了方便的部署功能，可以很轻松地将生成的静态文件推送到 GitHub Pages 仓库。 以下是将您的 Hexo 博客部署到 GitHub Pages">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-02T17:04:25.628Z">
+<meta property="article:modified_time" content="2025-06-02T17:04:59.309Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>John Doe</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(6)</small>
+            
+        </div>
+    </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="6">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2025/06/03/github.io/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2025-06-03 01:04:25">2025/06/03</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/Firebase%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2025-06-02 23:59:06">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="笔记">笔记</span>
+            <span class="post-date" title="2025-06-02 23:40:55">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2025-06-02 23:31:52">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2025-06-02 22:23:24">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/firebase%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2025-06-02 21:53:52">2025/06/02</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-github.io" class="article article-type-post" itemscope itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-06-03 01:04:59'>2025-06-03 01:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>将 Hexo 博客部署到 GitHub Pages ( <code>.github.io</code> 项目) 也是一个非常常见的方案。正如我们之前讨论的，GitHub Pages 非常适合托管来自 GitHub 仓库的静态网站，并且对于公共仓库是 <strong>无费用</strong> 的。</p>
+<p>Hexo 内置了方便的部署功能，可以很轻松地将生成的静态文件推送到 GitHub Pages 仓库。</p>
+<p>以下是将您的 Hexo 博客部署到 GitHub Pages 的详细步骤：</p>
+<p><strong>步骤 1：在 GitHub 上创建仓库</strong></p>
+<ul>
+<li><p><strong>重要：</strong> GitHub Pages 对仓库名称有特殊要求，特别是对于用户或组织的个人主页网站。</p>
+<ul>
+<li><p>如果您想创建一个 <strong>个人主页网站</strong> （网址是 <code>您的GitHub用户名.github.io</code> ），您需要创建一个名为 <strong><code>您的GitHub用户名.github.io</code></strong> 的新仓库。例如，如果您的 GitHub 用户名是 <code>octocat</code> ，则仓库名称必须是 <code>octocat.github.io</code> 。 <strong>这个仓库必须是公共的 (Public)。</strong></p>
+</li>
+<li><p>如果您想创建一个 <strong>项目网站</strong> （网址通常是 <code>您的GitHub用户名.github.io/仓库名称</code> ），您可以在任何仓库中启用 GitHub Pages，通常是将静态文件放在 <code>main</code> 或 <code>gh-pages</code> 分支的根目录或 <code>/docs</code> 文件夹中。但对于博客，通常会创建个人主页网站仓库。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>怎么做：</strong></p>
+<ol>
+<li><p>登录您的 GitHub 账号。</p>
+</li>
+<li><p>点击右上角的加号 <code>+</code> ，选择 “New repository” (新建仓库)。</p>
+</li>
+<li><p><strong>Repository name (仓库名称):</strong> 输入 <code>您的GitHub用户名.github.io</code> (替换为您的实际用户名)。</p>
+</li>
+<li><p><strong>Description (描述):</strong> 可以选择性地添加描述。</p>
+</li>
+<li><p><strong>Public&#x2F;Private:</strong> <strong>务必选择 Public (公共)</strong> ，GitHub Pages 不支持私有仓库的个人主页网站。</p>
+</li>
+<li><p>不要勾选 “Add a README file” 或其他选项，创建一个完全空的仓库。</p>
+</li>
+<li><p>点击 “Create repository” (创建仓库)。</p>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>步骤 2：在本地 Hexo 项目中安装 Git 部署插件</strong></p>
+<ul>
+<li><p>Hexo 默认不包含部署到 Git 仓库的功能，您需要安装一个插件。</p>
+</li>
+<li><p><strong>怎么做：</strong> 打开命令行终端，进入您的 Hexo 项目根目录，运行以下命令安装 <code>hexo-deployer-git</code> 插件：</p>
+<p>  npm install hexo-deployer-git –save</p>
+<p>  content_copy</p>
+</li>
+</ul>
+<p><strong>步骤 3：配置 Hexo 的部署设置</strong></p>
+<ul>
+<li><p>您需要告诉 Hexo 将生成的静态文件部署到哪个 Git 仓库。</p>
+</li>
+<li><p><strong>怎么做：</strong> 打开您的项目根目录下的主配置文件 <code>_config.yml</code> 。找到或添加 <code>deploy</code> 部分。</p>
+<p>  deploy:  type: git</p>
+<p>    repo: <a target="_blank" rel="noopener" href="https://github.com/%E6%82%A8%E7%9A%84GitHub%E7%94%A8%E6%88%B7%E5%90%8D/%E6%82%A8%E7%9A%84GitHub%E7%94%A8%E6%88%B7%E5%90%8D.github.io.git">https://github.com/您的GitHub用户名/您的GitHub用户名.github.io.git</a>  branch: main # 或者 master，取决于您的 GitHub 仓库默认分支</p>
+<p>  content_copy</p>
+<p>  展开</p>
+<ul>
+<li><p>将 <code>您的GitHub用户名</code> 替换为您的实际 GitHub 用户名。</p>
+</li>
+<li><p><code>repo:</code> 后面填写您刚刚创建的 GitHub Pages 仓库的 HTTPS 克隆地址。</p>
+</li>
+<li><p><code>branch:</code> 通常是 <code>main</code> 或 <code>master</code> 。请查看您的 GitHub 仓库设置，确认默认分支名称。Hexo 会将生成的静态文件推送到这个分支的根目录。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>步骤 4：生成静态文件并部署到 GitHub Pages</strong></p>
+<ul>
+<li><p>现在，您可以使用 Hexo 的命令来生成静态文件，并直接将其部署到您配置好的 GitHub Pages 仓库。</p>
+</li>
+<li><p><strong>怎么做：</strong></p>
+<ol>
+<li><p>打开命令行终端，进入您的 Hexo 项目根目录。</p>
+</li>
+<li><p><strong>生成静态文件：</strong> 运行 <code>hexo generate</code> 或 <code>hexo g</code> 。这个步骤会将您的博客生成到 <code>public</code> 文件夹。</p>
+</li>
+<li><p><strong>部署到 GitHub Pages：</strong> 运行 <code>hexo deploy</code> 或简写 <code>hexo d</code> 。</p>
+<ul>
+<li><p>这个命令会自动将 <code>public</code> 文件夹中的内容推送到您在 <code>_config.yml</code> 中配置的 Git 仓库 ( <code>您的GitHub用户名.github.io.git</code> ) 的指定分支 ( <code>main</code> 或 <code>master</code> )。</p>
+</li>
+<li><p>首次部署时，可能需要您输入 GitHub 的用户名和密码，或者使用 Personal Access Token (PAT) 进行认证。推荐使用 PAT，更安全。您可以参考 GitHub 文档如何生成 PAT。</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>等待部署：</strong> 推送完成后，GitHub Pages 可能需要几分钟的时间来处理和部署您的网站。</p>
+</li>
+</ul>
+<p><strong>步骤 5：访问您的 GitHub Pages 博客</strong></p>
+<ul>
+<li><p>部署成功并在 GitHub Pages 处理完成后，您就可以通过浏览器访问您的博客了。</p>
+</li>
+<li><p><strong>网址：</strong> <code>https://您的GitHub用户名.github.io</code> (替换为您的实际用户名)。</p>
+</li>
+</ul>
+<p><strong>总结流程：</strong></p>
+<ol>
+<li><p>在 GitHub 创建 <code>您的GitHub用户名.github.io</code> 公共仓库。</p>
+</li>
+<li><p>在本地 Hexo 项目安装 <code>hexo-deployer-git</code> ( <code>npm install hexo-deployer-git --save</code> )。</p>
+</li>
+<li><p>修改 <code>_config.yml</code> ，配置 <code>deploy</code> 部分，指定仓库地址和分支。</p>
+</li>
+<li><p>运行 <code>hexo generate</code> ( <code>hexo g</code> ) 生成静态文件。</p>
+</li>
+<li><p>运行 <code>hexo deploy</code> ( <code>hexo d</code> ) 部署到 GitHub Pages。</p>
+</li>
+<li><p>等待几分钟，访问 <code>https://您的GitHub用户名.github.io</code> 。</p>
+</li>
+</ol>
+<p>这就是将 Hexo 博客部署到 GitHub Pages 的方法。与 Firebase Hosting 不同，这种方式直接利用了 GitHub 的仓库和 Pages 服务进行托管。</p>
+<p>您可以根据您的需求（比如是否需要 Firebase 的其他服务集成、对性能和 CDN 的更高要求等）来选择是部署到 Firebase Hosting 还是 GitHub Pages。</p>
+<p>希望这份指南对您有帮助！开始您的 GitHub Pages 部署之旅吧！</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
